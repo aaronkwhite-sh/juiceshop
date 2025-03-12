@@ -1,0 +1,24 @@
+app:
+  applicationId: dec87c34-42d3-4d29-b572-6aade84a0647
+  env: CI/CD
+  # The url of your application to scan
+  host: ${APP_HOST}
+  # The risk level to run the scan at (Low/Medium/High)
+  riskLevel: Medium
+
+hawk:
+  spider:
+    # The maximum time to spend spidering the application
+    maxDurationMinutes: 5
+  # The maximum time to spend scanning the application
+  maxDurationMinutes: 30
+
+# Authentication configuration for the scan
+auth:
+  type: form
+  loginPath: /rest/user/login
+  usernameField: email
+  passwordField: password
+  credentials:
+    username: admin@juice-sh.op
+    password: admin123 
